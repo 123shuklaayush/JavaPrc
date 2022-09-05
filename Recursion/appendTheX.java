@@ -1,30 +1,27 @@
 package Recursion;
 
 public class appendTheX {
-    public static void addX(String str, int idx){
-        int count = 0;
-        String newString = "";
+    public static void moveAllX(String str, int idx, int count, String newString){
         if(idx == str.length()){
-//            for(int i = 0;i <count; i++){
-//                newString += 'x';
-//            }
+            for(int i = 0; i< count; i++){
+                newString += 'x';
+            }
             System.out.println(newString);
             return;
         }
-        char currElement = str.charAt(idx);
-        if(currElement == 'x'){
+        char currChar = str.charAt(idx);
+        if(currChar == 'x'){
             count++;
-            addX(str, idx+1);
+            moveAllX(str,idx +1, count, newString);
         }
         else{
-            newString += currElement;
-            addX(str, idx+1);
+            newString+= currChar;
+            moveAllX(str, idx+1, count, newString);
         }
     }
 
     public static void main(String[] args) {
-        String str = "aysxdx";
-        addX(str, 0);
-
+        String str = "abxccdx";
+        moveAllX(str, 0, 0, "");
     }
 }
