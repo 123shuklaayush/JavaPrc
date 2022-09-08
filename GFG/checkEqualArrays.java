@@ -1,4 +1,4 @@
-//import java.sql.Array;
+package GFG;//import java.sql.Array;
 import java.util.*;
 
 public class checkEqualArrays {
