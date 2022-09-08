@@ -1,12 +1,15 @@
 package Hashing;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.*;
+
 public class hashSet {
     public static void main(String[] args) {
 //        Creating HashSet
         HashSet<Integer> set = new HashSet<>(); // Quite Similar to ArrayList
 //        ArrayList<Integer> arr = new ArrayList<>();
+//        Set<Integer> s = new LinkedHashSet<>();
+//        if you want to see in ordered list then use linkedhashset
+
+
         //insert
         set.add(0);
         set.add(49);

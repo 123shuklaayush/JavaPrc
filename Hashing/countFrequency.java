@@ -14,6 +14,7 @@ public class countFrequency {
                 map.put(arr[i] , 1);
             }
         }
+
         for(Map.Entry<Integer,Integer> e: map.entrySet()){
             System.out.println(e.getKey() + " " + e.getValue());
         }
