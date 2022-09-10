@@ -14,7 +14,9 @@ public class hashMap {
 //        System.out.println(map);
         map.put("china", 410);
 //        System.out.println(map);
-//
+        System.out.println('=');
+        System.out.println(map.keySet());
+        System.out.println("__");
 //        //Searching
 //        System.out.println(map.containsKey("china"));
         System.out.println(map.get("china"));

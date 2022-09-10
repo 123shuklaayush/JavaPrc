@@ -10,7 +10,7 @@ public class factorial {
         return res;
     }
     public static void main(String[] args) {
-        int n = fact(0);
+        int n = fact(4);
         System.out.println(n);
     }
 }
