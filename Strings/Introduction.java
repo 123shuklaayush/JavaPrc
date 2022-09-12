@@ -9,7 +9,7 @@ public class Introduction {
 //        System.out.println(a.length());
 //        System.out.println(b.length());
 //        System.out.println(b.compareTo(a));
-        a.substring(4);
+//        a.substring();
         System.out.println(a.length());
         System.out.println(a + b);
         System.out.println(a.substring(1, 4));
