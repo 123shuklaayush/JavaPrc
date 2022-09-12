@@ -4,29 +4,39 @@ import java.util.*;
 
 public class reverseArrayinGroups {
     void reverseInGroups(ArrayList<Integer> arr, int n, int k) {
-        int m =k;
-        int[] a = new int[k];
-        for(int i = 0; i< k; i++){
-            a[i] = arr.get(m - 1);
-            m--;
+        for (int i = 0; i < arr.size(); i = i + k) {
+            int left = i;
+            int right = Math.min(i + k - 1, arr.size() - 1);
+            int temp;
+            while (left < right) {
+                temp = arr.get(left);
+                arr.set(left, arr.get(right));
+                arr.set(right, temp);
+                left++;
+                right--;
+            }
         }
-        int[] b = new int[arr.size()-k];
-        int j = arr.size()-1;
-        for(int c= 0; c<b.length; c++){
-            b[c] = arr.get(j);
-            j--;
-        }
-        for(int i = 0; i< a.length; i++){
-            System.out.print(a[i] + " ");
+        for (int j = 0; j < arr.size(); j++) {
+            System.out.print(arr.get(j) + " ");
+
         }
     }
     public static void main(String[] args) {
-        ArrayList<Integer> arr= new ArrayList<>();
-        arr.add(1);
-        arr.add(5);
-        arr.add(4);
-        arr.add(3);
-        arr.add(2);
-//        reverseArrayinGroups(arr, 5, 3);
+//        for(int i = 0; i< arr.length; i= i+k) {
+//            int left = i;
+//            int right = Math.min(i + k - 1, arr.length - 1);
+//            int temp;
+//            while (left < right) {
+//                temp = arr[left];
+//                arr[left] = arr[right];
+//                arr[right] = temp;
+//                left++;
+//                right--;
+//            }
+//        }
+//            for(int j= 0; j< arr.length; j++){
+//                System.out.print(arr[j] + " ");
+//
+//        }
     }
 }
