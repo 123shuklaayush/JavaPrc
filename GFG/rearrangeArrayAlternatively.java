@@ -15,9 +15,7 @@ public class rearrangeArrayAlternatively {
             newArr[j] = (int) arr[initialNum];
             initialNum++;
         }
-        for(int i = 0; i< arr.length;i++){
-            System.out.print(newArr[i] + " ");
-        }
+
     }
 
     public static void main(String[] args) {

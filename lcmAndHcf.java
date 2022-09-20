@@ -5,6 +5,7 @@ public class lcmAndHcf {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int b = sc.nextInt();
+
         int i,j;
         for(i = Math.max(a, b); i<a*b; i++){
             if(i %a==0 && i%b ==0){
