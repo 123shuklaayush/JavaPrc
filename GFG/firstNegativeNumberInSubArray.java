@@ -1,39 +1,49 @@
 package GFG;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class firstNegativeNumberInSubArray {
-    public static long[] printFirstNegativeInteger(long arr[], int n, int k)
-    {
-        Queue<Long> q = new ArrayDeque<>();
-        long[] p = new long[n];
+    public static ArrayList<Integer> printFirstNegativeInteger(long arr[], int n, int k) {
+        Queue<Integer> q = new ArrayDeque<>();
+        ArrayList<Integer> a = new ArrayList<>();
         int i = 0, j=0;
-        int m = 0;
         while(j<arr.length){
+//            {-8, 2, 3, -6, 10}
+
+            // Calculations
             if(arr[j]<0){
-                q.add( arr[j]);
+                q.add((int)arr[j]);
             }
+            //
+            // Incrementing loop until window size condition doesn't satisfy
             if(j-i+1<k){
                 j++;
             }
-            else if(j-i==k){
-                if(q.size()==0){
-                    q.add(0L);
-                }
-                else{
-                    if(arr[i] == q.peek());
-                    p[m] = p[Math.toIntExact(q.peek())];
-                    q.remove();
-                    m++;
-                }
+            //
+            // If condition satisfy
 
+            else if(j-i+1==k){
+                if(q.size()==0){
+                    a.add(0);
+                }
+                //            {-8, 2, 3, -6, 10}
+
+                else{
+                    a.add(q.peek());
+                    if(arr[i] <0) {
+                        q.remove();
+                    }
+                    }
+                    i++; j++;
             }
         }
-        return p;
+        return a;
     }
 
     public static void main(String[] args) {
         long[] arr = {-8, 2, 3, -6, 10};
-        System.out.println(Arrays.toString(printFirstNegativeInteger(arr, arr.length, 2)));
+//        long[] arr = {12, -1, -7, 8, 5, 30, -16, 28};
+        System.out.println((printFirstNegativeInteger(arr, arr.length, 3)));
     }
 }

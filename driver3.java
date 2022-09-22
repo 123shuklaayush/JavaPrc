@@ -15,9 +15,8 @@ public class driver3 {
     }
 
     public static void main(String[] args) {
-        int n = 5;
-        int[] arr = {1, 2, 3, 5};
-        int res = MissingNumber(arr, n);
-        System.out.println(res);
+        int s = 19;
+
+        System.out.println(Integer.toBinaryString(s));
     }
 }
