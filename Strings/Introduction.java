@@ -1,6 +1,7 @@
 package Strings;
 
 import java.sql.SQLOutput;
+import java.util.Collections;
 
 public class Introduction {
     public static void main(String[] args) {
@@ -13,5 +14,6 @@ public class Introduction {
         System.out.println(a.length());
         System.out.println(a + b);
         System.out.println(a.substring(1, 4));
+        System.out.println(b.toLowerCase());
     }
 }
