@@ -1,6 +1,4 @@
-package GFG;
-
-import java.util.ArrayList;
+package SlidingWindow;
 
 public class maximumSumSubarray {
     // This question is based on window slider
