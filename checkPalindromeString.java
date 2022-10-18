@@ -1,5 +1,5 @@
 public class checkPalindromeString {
-    static int isPalindrome(String S) {
+    static boolean isPalindrome(String S) {
         StringBuilder str = new StringBuilder();
         str.append(S);
 
@@ -12,11 +12,11 @@ public class checkPalindromeString {
             }
         }
         if(count == S.length()){
-            return 1;
+            return true;
         }
 
 
-        return 0;
+        return false;
     }
 
     public static void main(String[] args) {

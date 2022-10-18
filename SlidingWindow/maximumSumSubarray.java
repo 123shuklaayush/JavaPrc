@@ -3,10 +3,10 @@ package SlidingWindow;
 public class maximumSumSubarray {
     // This question is based on window slider
     public static long maximumSubArray(int[] arr, int n, int k){
-        int sum=0;
+        int sum=-0;
         int i = 0;
         int j= 0;
-        long max = 0;
+        long max = -2147483648;
 
         while(j<arr.length){
             sum += arr[j];
@@ -23,7 +23,7 @@ public class maximumSumSubarray {
         return max;
     }
     public static void main(String[] args) {
-        int[] arr = {2, 3, 5, 3, 1};
+        int[] arr = {-2, -3, -5, 4};
         int k = 3;
         long res = maximumSubArray(arr, arr.length, k);
         System.out.println(res);
