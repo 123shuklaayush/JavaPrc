@@ -22,7 +22,7 @@ public class maximumOfAllSubArrays {
     }
 
     public static void main(String[] args) {
-        int[] arr = {-5, -1, -4};
+        int[] arr = {-5, -1, -4, 2, 5, 8};
         System.out.println(printmax(arr, 3));
     }
 }

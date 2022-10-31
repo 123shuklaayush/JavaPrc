@@ -6,7 +6,7 @@ public class maximumSumSubarray {
         int sum=-0;
         int i = 0;
         int j= 0;
-        long max = -2147483648;
+        long max = Integer.MIN_VALUE;
 
         while(j<arr.length){
             sum += arr[j];

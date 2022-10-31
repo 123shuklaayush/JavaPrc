@@ -3,7 +3,7 @@ package SlidingWindow;
 import java.util.*;
 
 public class slidingWindowMaximum {
-    public static ArrayList<Integer> slidingMaximum(List<Integer> arr, int k) {
+    public static ArrayList<Integer> slidingMaximum(ArrayList<Integer> arr, int k) {
         ArrayList<Integer> a = new ArrayList<>();
         int i = 0, j=0;
         int maxSum = -2147483648;

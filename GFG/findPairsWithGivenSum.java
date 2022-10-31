@@ -19,4 +19,9 @@ public class findPairsWithGivenSum {
 ////
 ////        }
 //    }
+public static void main(String[] args) {
+    long n = Long.MAX_VALUE;
+    System.out.println(n);
 }
+}
+
