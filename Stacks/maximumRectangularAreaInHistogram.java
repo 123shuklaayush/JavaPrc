@@ -62,7 +62,7 @@ public class maximumRectangularAreaInHistogram {
     }
 
     public static void main(String[] args) {
-        long[] arr= {6, 2, 5, 4, 5, 1, 6};
+        long[] arr= {2,1,5,6,2,3};
         ArrayList<Integer> ar = new ArrayList<>();
 
         ar.add(6);

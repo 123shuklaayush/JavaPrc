@@ -26,6 +26,7 @@ public class driver3 {
             System.out.print(nums[i]+" ");
         }
     }
+
     public static void moveZeroes1(int[] nums) {
         ArrayList<Integer> arr = new ArrayList<>();
         int count = 0;
@@ -49,6 +50,16 @@ public class driver3 {
 
     }
     public static void main(String[] args) {
-
+        String s = "Sumit2 is1 lafadiya3";
+        String[] str= s.split(" ");
+        int[] storeNum= new int[s.length()];
+        String[] nstr = new String[s.length()];
+        for(int i =0; i< s.length(); i++){
+            nstr[i] = String.valueOf(str[i].length()-1);
+        }
+        for(int i = 0; i< s.length(); i++){
+            System.out.println(nstr[i]);
+        }
+        HashMap<String, Integer> map = new HashMap<>();
     }
 }
