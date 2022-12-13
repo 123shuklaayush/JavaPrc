@@ -6,18 +6,18 @@ public class stockSpanProblem {
     public static int[] calculateSpan(int price[], int n){
         int[] arr = new int[n];
         Stack<Integer> s = new Stack<>();
+        int count =1;
         for(int i=0;i<n;i++){
             if(s.isEmpty())
                 arr[i]=1;
             else if(s.size()>0 && price[s.peek()]>price[i])
-                arr[i]=i-s.peek();
+                arr[i]=1;
             else if(s.size()>0 && price[s.peek()]<=price[i]){
-                while(!s.isEmpty() && price[s.peek()]<=price[i])
+                while(!s.isEmpty() && price[s.peek()]<=price[i]) {
                     s.pop();
-                if(s.size()==0)
-                    arr[i]=i+1;
-                else
-                    arr[i]=i-s.peek();
+                    count++;
+                }
+                arr[i] = count;
             }
             s.push(i);
         }

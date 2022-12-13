@@ -27,6 +27,7 @@ public class countOccurencesOfAnagrams {
             else if (j-i+1==k) {
 //                Answer from the Calculaion
             }
+
         }
         return num;
     }
