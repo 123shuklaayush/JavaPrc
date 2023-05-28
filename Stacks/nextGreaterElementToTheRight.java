@@ -23,6 +23,7 @@ public class nextGreaterElementToTheRight {
                 }
 
             s.push(arr[i]);
+
         }
         Collections.reverse(list);
         long[] ans= new long[list.size()];
@@ -34,9 +35,9 @@ public class nextGreaterElementToTheRight {
     }
 
     public static void main(String[] args) {
-        long[] arr = {7,8,1,4};
+        long[] arr = {1,3,4,2};
         System.out.println(Arrays.toString(nextLargerElement(arr, arr.length)));
-
+        System.out.println(Arrays.toString(nextLargerElement(arr, arr.length)));
 
     }
 }

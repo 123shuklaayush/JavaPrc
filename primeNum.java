@@ -16,4 +16,5 @@ public class primeNum {
             System.out.println("0");
         }
     }
+
 }

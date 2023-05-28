@@ -7,10 +7,11 @@ public class hashSet {
         HashSet<Integer> set = new HashSet<>(); // Quite Similar to ArrayList
 //        ArrayList<Integer> arr = new ArrayList<>();
 //        Set<Integer> s = new LinkedHashSet<>();
-//        if you want to see in ordered list then use linkedhashset
+//        if you want to see in ordered list then use linkedhashset        //insert
+        Set<String> s = new LinkedHashSet<>();
 
 
-        //insert
+
         set.add(0);
         set.add(49);
         set.add(03);

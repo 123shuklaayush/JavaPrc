@@ -39,6 +39,7 @@ public class maximumRectangularAreaInHistogram {
             }
             n.push(new pair((int) nums[i], i));
         }
+
         Collections.reverse(ar);
         ArrayList<Integer> afin = new ArrayList<>();
         long max =0;

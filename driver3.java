@@ -1,28 +1,31 @@
-
-import javax.swing.plaf.synth.SynthOptionPaneUI;
-import java.lang.reflect.Array;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 public class driver3 {
-
-    public static void main(String[] args) {
-        String num = "1011";
-        int binNum = Integer.parseInt(num);
-        int k = 4;
-        System.out.println(2<<k);
-        System.out.println(Integer.toBinaryString(42));
-        int um = 16;
-        int count = 0;
-        while(um !=0){
-            count++;
-            um = um & (um -1);
-        }
-        int n = 3;
-        int x = 1;
-        System.out.println(Math.pow(2, 5));
-        System.out.println(Math.ceil(30.34902));
-        System.out.println(Math.abs(400-40));
-
+    static ArrayList<String> permutation(String S){
+        // Code Here
+        ArrayList<String> arr = new ArrayList<>();
+        String input = S;
+        String output = "";
+        output += (S.charAt(0));
+        input =input.substring(1);
+        helper(arr, output, input);
+        return arr;
     }
-
-
+    static void helper(ArrayList<String> arr , String output, String input){
+        if(input.isEmpty()){
+            arr.add(output);
+            return;
+        }
+        String op1 = output + input.charAt(0);
+        String op2 = output + " " +  input.charAt(0) ;
+        input = input.substring(1);
+        helper(arr, op1, input);
+        helper(arr, op2, input);
+    }
+    public static void main(String[] args) {
+        System.out.println(permutation("abc"));
+    }
 }
+
