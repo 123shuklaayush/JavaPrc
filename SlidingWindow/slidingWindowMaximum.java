@@ -3,41 +3,39 @@ package SlidingWindow;
 import java.util.*;
 
 public class slidingWindowMaximum {
-    public static ArrayList<Integer> slidingMaximum(ArrayList<Integer> arr, int k) {
-        ArrayList<Integer> a = new ArrayList<>();
-        int i = 0, j=0;
-        int maxSum = -2147483648;
-        while(j<arr.size()){
-            maxSum = Math.max(maxSum, arr.get(j));
+    static ArrayList<Integer> max_of_subarrays(int arr[], int n, int k) {
+        // Your code here
+        ArrayList<Integer> nums = new ArrayList<>();
+        for(int i : arr) nums.add(i);
+        return maxOfSubarrays(nums, n, k);
+    }
+    public static ArrayList<Integer> maxOfSubarrays(ArrayList<Integer> arr, int n, int k) {
+        Deque<Integer> q = new LinkedList<>();
+        int i = 0, j = 0;
+        ArrayList<Integer> res = new ArrayList<>();
 
-//            {-10, 6, 2, 5, -8, 9, 8, 7, -1}
+        while (j < n) {
+            while (!q.isEmpty() && q.peekLast() < arr.get(j))
+                q.removeLast();
+            q.addLast(arr.get(j));
 
-            if(j-i+1<k){
+            if (j - i + 1 < k)
+                j++;
+            else if (j - i + 1 == k) {
+                res.add(q.peekFirst());
+                if (q.peekFirst().equals(arr.get(i)))
+                    q.removeFirst();
+                i++;
                 j++;
             }
-            else if(j-i+1 ==k){
-                a.add(maxSum);
-                if(maxSum == arr.get(i)){
-                    maxSum = -2147483648;
-                }
-                i++; j++;
-            }
         }
-        return a;
+
+        return res;
     }
 
+
     public static void main(String[] args) {
-        ArrayList<Integer> arr= new ArrayList<>();
-        arr.add(-10);
-        arr.add(6);
-        arr.add(2);
-        arr.add(5);
-        arr.add(-8);
-        arr.add(9);
-        arr.add(8);
-        arr.add(7);
-        arr.add(-1);
-        System.out.println(slidingMaximum(arr, 3));
-//        System.out.println(arr.get(4));
+        ArrayList<Integer> arr= new ArrayList<>(Arrays.asList(-10, 6, 2, 5, -8, 9, 8, 7 ,-1));
+        System.out.println(maxOfSubarrays(arr, arr.size(), 3));
     }
 }

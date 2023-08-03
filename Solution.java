@@ -1,31 +1,23 @@
+import java.math.BigInteger;
 import java.util.*;
-class Solution {
-    public static List<String> letterCasePermutation(String s) {
-        Set<String> list = new HashSet<>();
-        String ip= s;
-        String op = "";
-        helper(list, ip, op);
-        List<String> l = new ArrayList<>(list);
-        return l;
 
+class Solution{
+    static int[][] dp = new int[1001][1001];
+    public Solution(){
+        for(int row[]: dp)
+            Arrays.fill(row, -1);
     }
-    static void helper(Set<String> list, String input, String output){
-        if(input.isEmpty()){
-            list.add(output);
-            return;
-        }
-        String op1 = output + input.charAt(0);
-        String op2 = output + input.toUpperCase().charAt(0);
-        char c = input.charAt(0);
-        input = input.substring(1);
-        helper(list, input, op1);
-        if(Character.isLowerCase(c))
-            helper(list, input, output + Character.toUpperCase(c));
+    static int knapSack(int n, int w, int val[], int wt[], int[][] dp)
+    {
+        if(w == 0 || n == 0) return 0;
+        if(dp[w][n] != -1) return dp[w][n];
+        if(w>= wt[n-1])
+            return dp[w][n] = Math.max((val[n-1] + knapSack(n, w-wt[n-1], val, wt, dp)), knapSack(n-1, w, val, wt, dp));
         else
-            helper(list, input, output + Character.toLowerCase(c));
-    }
+            return dp[w][n] = knapSack(n-1, w, val, wt,dp);
+}
     public static void main(String[] args) {
-        String s = "C";
-        System.out.println(letterCasePermutation(s));
+
+        int num = 192;
     }
 }
