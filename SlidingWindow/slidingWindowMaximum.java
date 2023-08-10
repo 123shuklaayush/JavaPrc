@@ -3,12 +3,7 @@ package SlidingWindow;
 import java.util.*;
 
 public class slidingWindowMaximum {
-    static ArrayList<Integer> max_of_subarrays(int arr[], int n, int k) {
-        // Your code here
-        ArrayList<Integer> nums = new ArrayList<>();
-        for(int i : arr) nums.add(i);
-        return maxOfSubarrays(nums, n, k);
-    }
+
     public static ArrayList<Integer> maxOfSubarrays(ArrayList<Integer> arr, int n, int k) {
         Deque<Integer> q = new LinkedList<>();
         int i = 0, j = 0;
